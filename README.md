@@ -30,9 +30,9 @@ trabalho-lfa-simplificacao/
 ├── requirements.txt
 ├── src/
 │   ├── grammar.py            # estrutura de dados da gramatica + parser do arquivo de entrada
-│   ├── etapa1_inuteis.py     # verificacao de simbolos inuteis
-│   ├── etapa2_vazias.py      # verificacao de producoes vazias
-│   ├── etapa3_unitarias.py   # verificacao de producoes unitarias
+│   ├── verifica_inuteis.py     # verificacao de simbolos inuteis
+│   ├── verifica_vazias.py      # verificacao de producoes vazias
+│   ├── verifica_unitarias.py   # verificacao de producoes unitarias
 │   └── main.py                # CLI: carrega a gramatica e roda os 3 verificadores
 ├── exemplos/                  # gramaticas de exemplo usadas como casos de teste
 ├── testes/                    # suite de testes automatizados (pytest)
