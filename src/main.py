@@ -17,7 +17,4 @@ Gramatica = verificaVazias.prodVazia(Gramatica)
 
 verificaVazias.procuraProdVazia(Gramatica)
 
-geradores = verificaInuteis.calculaGeradores(Gramatica)
-
-print("\nGeradores:")
-print(geradores)
+verificaInuteis.procuraInuteis(Gramatica)
