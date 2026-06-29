@@ -1,4 +1,5 @@
 import verificaVazias
+import verificaInuteis
 
 Gramatica = {
     
@@ -16,4 +17,7 @@ Gramatica = verificaVazias.prodVazia(Gramatica)
 
 verificaVazias.procuraProdVazia(Gramatica)
 
-#printGramatica(Gramatica)
+geradores = verificaInuteis.calculaGeradores(Gramatica)
+
+print("\nGeradores:")
+print(geradores)
