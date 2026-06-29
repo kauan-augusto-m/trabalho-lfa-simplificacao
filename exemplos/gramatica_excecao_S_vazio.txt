@@ -1,0 +1,9 @@
+# Gramatica em que S -> epsilon e permitido: S nao aparece no corpo
+# de nenhuma outra producao, e a linguagem gerada inclui a cadeia vazia.
+
+N: S, A
+T: a, b
+S: S
+P:
+S -> A | epsilon
+A -> a A b | a b

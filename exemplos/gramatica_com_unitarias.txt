@@ -1,0 +1,9 @@
+# Gramatica com producao unitaria: S -> A (cadeia de substituicao simples)
+
+N: S, A, B
+T: a, b
+S: S
+P:
+S -> A
+A -> a B
+B -> b

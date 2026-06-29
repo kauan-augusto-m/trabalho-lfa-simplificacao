@@ -1,0 +1,9 @@
+# Gramatica ja simplificada: sem simbolos inuteis, sem producoes
+# vazias e sem producoes unitarias. Gera a linguagem a^n b^n, n >= 1.
+
+N: S, A
+T: a, b
+S: S
+P:
+S -> a A b
+A -> a A b | a b

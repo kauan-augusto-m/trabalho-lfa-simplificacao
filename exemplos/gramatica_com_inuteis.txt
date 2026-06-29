@@ -1,0 +1,13 @@
+# Gramatica com simbolos inuteis:
+# - C e improdutivo (so produz cadeias com C, nunca termina so em terminais)
+# - D e inalcancavel (nunca aparece a partir de S)
+
+N: S, A, B, C, D
+T: a, b
+S: S
+P:
+S -> A B
+A -> a
+B -> b
+C -> a C
+D -> b b

@@ -1,0 +1,10 @@
+# Gramatica com producao vazia indevida: B -> epsilon, e B aparece
+# no corpo de outras producoes (nao e o caso especial S -> epsilon).
+
+N: S, A, B
+T: a, b
+S: S
+P:
+S -> A B
+A -> a
+B -> b B | epsilon
