@@ -1,10 +1,6 @@
-# Trabalho 2 - LFA 2026.1 - Verificacao das 3 etapas de simplificacao de gramaticas
+# Trabalho 2 - LFA - Verificacao das 3 etapas de simplificacao de gramaticas
 
-**Disciplina:** Linguagens Formais e Automatos - 2026.1
-**Instituicao:** UTFPR - Campus Ponta Grossa - COCIC
-**Professor:** Gleifer Vaz Alves
-**Equipe:** <NOME 1>, <NOME 2>
-**Tema escolhido:** (c) Implementacao das verificacoes das 3 etapas de simplificacao de gramaticas (apenas a verificacao)
+
 
 ## Descricao
 
