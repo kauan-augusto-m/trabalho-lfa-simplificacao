@@ -1,5 +1,6 @@
 import verificaVazias
 import verificaInuteis
+import verificaUnitarias
 
 Gramatica = {
     
@@ -16,5 +17,7 @@ verificaVazias.procuraProdVazia(Gramatica)
 Gramatica = verificaVazias.prodVazia(Gramatica)
 
 verificaVazias.procuraProdVazia(Gramatica)
+
+verificaUnitarias.procuraProdUnitarias(Gramatica)
 
 verificaInuteis.procuraInuteis(Gramatica)

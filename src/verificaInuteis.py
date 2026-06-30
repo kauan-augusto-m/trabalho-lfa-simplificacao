@@ -53,7 +53,7 @@ def calculaAlcancaveis(Gramatica, Geradores):
             if cabeca in Alc and cabeca in Geradores:
                 for elemento in corpo:
                     
-                   
+
                     corpo_valido = True
                     for letra in elemento:
                         if letra in Gramatica and letra not in Geradores:
