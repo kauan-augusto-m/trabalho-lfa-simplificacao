@@ -51,18 +51,18 @@ def prodVazia(Gramatica):
     while True:
         alteracao = False
         
-        
         for cabeca, corpo in P1.items():
-            P1Temp[cabeca] = corpo
+            P1Temp[cabeca] = list(corpo)  # cópia real da lista, evita mutação durante iteração
         
         for cabeca, corpo in P1Temp.items():
             for elemento in corpo:
                 for letra in Ve:
+                    elementoTemp = None  # reset a cada letra para evitar arrastamento de valor anterior
                     for i in range(len(elemento)):
                         if elemento[i] == letra:
                             elementoTemp = elemento[:i] + elemento[i+1:]
                     
-                    if (len(elementoTemp) > 0) and (elementoTemp not in corpo):
+                    if elementoTemp is not None and (len(elementoTemp) > 0) and (elementoTemp not in P1[cabeca]):
                         P1[cabeca].append(elementoTemp)
                         alteracao = True
                         
@@ -73,6 +73,7 @@ def prodVazia(Gramatica):
     print("Após remoção de produções que levam à produção vazia:")
     printGramatica(P1)
     return P1
+
 
 def procuraProdVazia(Gramatica):
     
@@ -85,9 +86,23 @@ def procuraProdVazia(Gramatica):
                     GramaticaTemp[cabeca].append(elemento)
                 else:
                     GramaticaTemp[cabeca] = [elemento]
-        
-    if len(GramaticaTemp) > 0:
+
+    # Verifica exceção clássica: única ε-produção é S -> ε
+    # e S não aparece do lado direito de nenhuma outra produção
+    excecao_valida = False
+    if list(GramaticaTemp.keys()) == ["S"] and GramaticaTemp["S"] == ["ε"]:
+        S_a_direita = False
+        for cabeca, corpo in Gramatica.items():
+            for elemento in corpo:
+                if "S" in elemento and elemento != "ε":
+                    S_a_direita = True
+        if not S_a_direita:
+            excecao_valida = True
+
+    if len(GramaticaTemp) == 0:
+        print("\nGramática não contêm produções vazias e está pronta para a próxima fase")
+    elif excecao_valida:
+        print("\nGramática contém apenas S -> ε, aceita como exceção clássica")
+    else:
         print("\nEssa gramática contem produções vazias:")
         printGramatica(GramaticaTemp)
-    else:
-        print("\nGramática não contêm produções vazias e está pronta para a próxima fase")
